@@ -1,5 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next"
+import { Container } from "@/components/container"
+import { Header } from "@/components/header"
 
 export const metadata: Metadata = {
   title: "Linear - Rebuilt",
@@ -14,7 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div>
+          <Header />
+          <main className="pt-[var(--navigation-height)]">{children}</main>
+          <footer>
+            <Container>Footer</Container>
+          </footer>
+        </div>
+      </body>
     </html>
   )
 }
