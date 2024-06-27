@@ -1,10 +1,10 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Container } from "@/components/container"
 import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Linear - Rebuilt",
+  title: "Linear - Plan and build products",
   description:
     "Linear is a purpose-built tool for planning and building products. The system for modern product development. Streamline issues, projects, and product roadmaps.",
 }
@@ -26,9 +26,7 @@ export default function RootLayout({
         <div>
           <Header />
           <main className="pt-navigation-height">{children}</main>
-          <footer>
-            <Container>Footer</Container>
-          </footer>
+          <Footer />
         </div>
       </body>
     </html>

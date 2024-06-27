@@ -15,6 +15,8 @@ const config: Config = {
       sm: "1.4rem",
       md: "1.6rem",
       lg: ["2.2rem", "1.3"],
+      "3xl": "2.6rem",
+      "4xl": "3.2rem",
       "5xl": ["8rem", "1"],
     },
     colors: {
