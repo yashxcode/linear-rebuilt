@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Linear - Plan and build products",
   description:
     "Linear is a purpose-built tool for planning and building products. The system for modern product development. Streamline issues, projects, and product roadmaps.",
+  icons: {
+    icon: "/logo.svg",
+  },
 }
 
 export default function RootLayout({
@@ -25,7 +28,9 @@ export default function RootLayout({
       <body>
         <div>
           <Header />
-          <main className="pt-navigation-height">{children}</main>
+          <main className="bg-page-gradient pt-navigation-height">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>

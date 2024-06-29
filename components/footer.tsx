@@ -49,7 +49,7 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="mt-12 border-t border-white-a08 py-[5.6rem] text-sm">
+    <footer className="border-transparent-white mt-12 border-t py-[5.6rem] text-sm">
       <Container className="flex flex-col justify-between md:flex-row">
         <div>
           <div className="flex h-full flex-row justify-between lg:flex-col">
@@ -58,9 +58,15 @@ export const Footer = () => {
               Linear - Designed worldwide
             </div>
             <div className="mt-auto flex space-x-4 text-gray">
-              <TwitterIcon />
-              <GithubIcon />
-              <SlackIcon />
+              <Link href="#" className="hover:text-off-white transition-colors">
+                <TwitterIcon />
+              </Link>
+              <Link href="#" className="hover:text-off-white transition-colors">
+                <GithubIcon />
+              </Link>
+              <Link href="#" className="hover:text-off-white transition-colors">
+                <SlackIcon />
+              </Link>
             </div>
           </div>
         </div>
@@ -71,7 +77,10 @@ export const Footer = () => {
               <ul>
                 {column.links.map((link) => (
                   <li className="[&_a]:last:mb-0">
-                    <Link href={link.href} className="mb-3 block text-gray">
+                    <Link
+                      href={link.href}
+                      className="hover:text-off-white mb-3 block text-gray transition-colors"
+                    >
                       {link.title}
                     </Link>
                   </li>

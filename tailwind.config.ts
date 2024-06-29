@@ -14,18 +14,25 @@ const config: Config = {
       xs: "1.3rem",
       sm: "1.4rem",
       md: "1.6rem",
-      lg: ["2.2rem", "1.3"],
+      lg: "1.8rem",
+      xl: ["2.2rem", "1.3"],
+      "2xl": "2.4rem",
       "3xl": "2.6rem",
       "4xl": "3.2rem",
-      "5xl": ["8rem", "1"],
+      "5xl": "4rem",
+      "6xl": ["4.4rem", "1.1"],
+      "7xl": ["4.8rem", "1.1"],
+      "8xl": ["8rem", "1.1"],
     },
     colors: {
       white: "#FFFFFF",
-      "white-a08": "rgba(255, 255, 255, 0.08)",
+      "off-white": "#F7F8F8",
+      "transparent-white": "rgba(255, 255, 255, 0.08)",
       background: "#000212",
       gray: "#858699",
       "dark-gray": "#222326",
       transparent: "transparent",
+      "primary-text": "#B4BCD0",
     },
     spacing: {
       0: "0",
@@ -46,9 +53,23 @@ const config: Config = {
     backgroundImage: {
       "primary-gradient":
         "linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%)",
+      "page-gradient":
+        "radial-gradient(ellipse 80% 50% at 50% -20%,rgba(120,119,198,0.3), transparent)",
     },
     boxShadow: {
       primary: "rgb(80 63 205 / 50%) 0px 1px 40px",
+    },
+    transitionDelay: {
+      0: "0ms",
+    },
+    keyframes: {
+      "fade-in": {
+        from: { opacity: "0", transform: "translateY(-10px)" },
+        to: { opacity: "1", transform: "none" },
+      },
+    },
+    animation: {
+      "fade-in": "fade-in 1000ms var(--animation-delay, 0ms) ease forwards",
     },
   },
   plugins: [],

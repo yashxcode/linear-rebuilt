@@ -9,10 +9,28 @@ import { Logo } from "./icons/logo"
 import classNames from "classnames"
 
 export const Header = () => {
-  const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] = useState(false)
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+
+  useEffect(() => {
+    document
+      .querySelector("html")
+      ?.classList.toggle("overflow-hidden", menuIsOpen)
+  }, [menuIsOpen])
+
+  useEffect(() => {
+    const closeMenu = () => setMenuIsOpen(false)
+
+    window.addEventListener("orientationchange", closeMenu)
+    window.addEventListener("resize", closeMenu)
+
+    return () => {
+      window.removeEventListener("orientationchange", closeMenu)
+      window.removeEventListener("resize", closeMenu)
+    }
+  }, [setMenuIsOpen])
 
   return (
-    <header className="fixed left-0 top-0 z-10 w-full border-b border-white-a08 backdrop-blur-[12px]">
+    <header className="border-transparent-white fixed left-0 top-0 z-10 w-full border-b backdrop-blur-[12px]">
       <Container className="flex h-navigation-height">
         <Link href="/" className="flex items-center text-md">
           <Logo className="mr-3 h-[1.8rem] w-[1.8rem]" />
@@ -22,13 +40,13 @@ export const Header = () => {
         <div
           className={classNames(
             "transition-[visibility] md:visible",
-            hamburgerMenuIsOpen ? "visible" : "invisible delay-500",
+            menuIsOpen ? "visible" : "invisible delay-500",
           )}
         >
           <nav
             className={classNames(
               "fixed left-0 top-navigation-height h-[calc(100vh_-_var(--navigation-height))] w-full overflow-auto bg-background transition-opacity duration-500 md:relative md:top-0 md:block md:h-auto md:w-auto md:translate-x-0 md:overflow-hidden md:bg-transparent md:opacity-100 md:transition-none",
-              hamburgerMenuIsOpen
+              menuIsOpen
                 ? "translate-x-0 opacity-100"
                 : "translate-x-[-100vw] opacity-0",
             )}
@@ -71,7 +89,7 @@ export const Header = () => {
         </div>
         <button
           className="ml-6 md:hidden"
-          onClick={() => setHamburgerMenuIsOpen((open) => !open)}
+          onClick={() => setMenuIsOpen((open) => !open)}
         >
           <span className="sr-only">Toggle Menu</span>
           <HamburgerIcon />
