@@ -1,11 +1,12 @@
 import { Button, IconWrapper } from "@/components/button"
 import { Container } from "@/components/container"
 import { Hero, HeroSubtitle, HeroTitle } from "@/components/hero"
+import { HeroImage } from "@/components/hero-image"
 import { ChevronRightIcon } from "@/components/icons/chevron-right"
 
 const Home = () => {
   return (
-    <Container className="pt-[6.4rem]">
+    <Container className="overflow-hidden py-[6.4rem]">
       <Hero>
         <Button
           href="#"
@@ -35,7 +36,7 @@ const Home = () => {
             <ChevronRightIcon />
           </IconWrapper>
         </Button>
-        <img src="hero.webp" alt="Hero image" className="mt-[12.8rem]" />
+        <HeroImage />
       </Hero>
     </Container>
   )
