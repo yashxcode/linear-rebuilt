@@ -38,4 +38,12 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .mask-radial-faded {
+    mask-image: radial-gradient(
+      circle at center center,
+      black,
+      transparent 80%
+    );
+  }
 }
