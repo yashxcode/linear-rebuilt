@@ -18,7 +18,7 @@ const Home = () => {
       </Container>
       <div
         className={classNames(
-          "mask-radial-faded relative my-[-12.8rem] flex h-[60rem] items-center justify-center overflow-hidden",
+          "mask-radial-faded pointer-events-none relative z-[-1] my-[-12.8rem] flex h-[60rem] items-center justify-center overflow-hidden",
           "before:bg-radial-faded [--color:#7877C6] before:absolute before:inset-0 before:opacity-[0.4]",
           "after:absolute after:-left-1/2 after:top-1/2 after:aspect-[1/0.7] after:w-[200%] after:rounded-[50%] after:border-t after:border-[rgba(120,119,198,0.4)] after:bg-background",
         )}

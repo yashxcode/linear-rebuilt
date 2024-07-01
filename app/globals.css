@@ -46,4 +46,8 @@
       transparent 80%
     );
   }
+
+  .mask-linear-faded {
+    mask-image: linear-gradient(black, transparent 70%);
+  }
 }
