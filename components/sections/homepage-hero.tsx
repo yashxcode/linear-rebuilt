@@ -1,4 +1,4 @@
-import { Button, IconWrapper } from "../button"
+import { Button, Highlight } from "../button"
 import { Hero, HeroSubtitle, HeroTitle } from "../hero"
 import { HeroImage } from "../hero-image"
 import { ChevronRightIcon } from "../icons/chevron-right"
@@ -12,7 +12,7 @@ export const HomepageHero = () => {
         size="small"
         className="animate-fade-in translate-y-[-1rem] opacity-0"
       >
-        Introducing Linear Initiatives <IconWrapper>→</IconWrapper>
+        Introducing Linear Initiatives <Highlight>→</Highlight>
       </Button>
       <HeroTitle className="animate-fade-in translate-y-[-1rem] opacity-0 [--animation-delay:200ms]">
         Linear is a better way
@@ -30,9 +30,9 @@ export const HomepageHero = () => {
         className="animate-fade-in translate-y-[-1rem] opacity-0 [--animation-delay:600ms]"
       >
         Get started{" "}
-        <IconWrapper>
+        <Highlight>
           <ChevronRightIcon />
-        </IconWrapper>
+        </Highlight>
       </Button>
       <HeroImage />
     </Hero>
