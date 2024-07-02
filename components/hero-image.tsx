@@ -58,7 +58,7 @@ export const HeroImage = () => {
           inView && "before:animate-image-glow",
         )}
       >
-        <div className="absolute left-0 top-0 z-20 h-full w-full">
+        <div className="absolute left-0 top-0 z-20 h-full w-full overflow-hidden">
           {lines.map((line) => (
             <span
               onAnimationEnd={() => removeLine(line.id)}

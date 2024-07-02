@@ -1,6 +1,7 @@
 import { Button, Highlight } from "../button"
 import { LogoLightIllustration } from "../illustrations/logo-light"
 import { ZapIllustration } from "../illustrations/zap"
+import { KeyboardShortcuts } from "../keyboard-shortcuts"
 
 export const UnlikeAnyTool = () => {
   return (
@@ -10,20 +11,21 @@ export const UnlikeAnyTool = () => {
           Unlike any tool
           <br className="hidden md:inline-block" /> you've used before
         </h2>
-        <p className="text-primary-text md:text-xl mx-auto mb-4 max-w-[68rem] text-lg md:mb-7">
+        <p className="text-primary-text md:text-xl mx-auto mb-12 max-w-[68rem] text-lg md:mb-7">
           Designed to the last pixel and engineered with unforgiving precision,
           Linear combines UI elegance with world-class performance.
         </p>
       </div>
-      <div className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto md:flex-wrap">
-        <div className="bg-glass-gradient md:p-14 border-transparent-white flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border p-8 text-center md:basis-[calc(66.66%-12px)]">
+      <div className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto px-8 md:flex-wrap md:px-0">
+        <div className="bg-glass-gradient md:p-14 border-transparent-white flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)]">
+          <KeyboardShortcuts />
           <p className="text-3xl mb-4">Built for your keyboard</p>
           <p className="text-primary-text text-md">
             Fly through your tasks with rapid-fire keyboard shortcuts for
             everything. Literally everything.
           </p>
         </div>
-        <div className="bg-glass-gradient md:p-14 border-transparent-white relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border p-8 text-center md:basis-[calc(33.33%-12px)]">
+        <div className="bg-glass-gradient md:p-14 border-transparent-white relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border p-8 text-center md:basis-[calc(33.33%-12px)]">
           <div className="mask-linear-faded absolute top-[-9.2rem]">
             <ZapIllustration />
           </div>
@@ -32,8 +34,8 @@ export const UnlikeAnyTool = () => {
             Built for speed with 50ms interactions and real-time sync.
           </p>
         </div>
-        <div className="bg-glass-gradient md:p-14 border-transparent-white group relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border p-8 text-center md:basis-[calc(33.33%-12px)]">
-          <div className="width-[130%] pointer-events-none absolute top-[-8rem]">
+        <div className="bg-glass-gradient md:p-14 border-transparent-white group relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border p-8 text-center md:basis-[calc(33.33%-12px)]">
+          <div className="pointer-events-none absolute top-[-8rem] w-[130%]">
             <LogoLightIllustration />
           </div>
           <p className="text-3xl mb-4">Designed for modern software teams</p>
@@ -44,7 +46,7 @@ export const UnlikeAnyTool = () => {
             variant="secondary"
             href="/"
             size="small"
-            className="absolute bottom-[20rem] translate-y-[30%] scale-[0.8] opacity-0 transition-[transform,opacity] group-hover:transform-none group-hover:opacity-100 [&_.highlight]:text-[1.1rem]"
+            className="absolute bottom-[20rem] translate-y-[30%] scale-[0.8] opacity-0 transition-[transform,translate,opacity] group-hover:transform-none group-hover:opacity-100 [&_.highlight]:text-[1.1rem]"
           >
             <Highlight>Linear Method</Highlight>
             Product principles
@@ -59,7 +61,7 @@ export const UnlikeAnyTool = () => {
             </svg>
           </Button>
         </div>
-        <div className="bg-glass-gradient md:p-14 border-transparent-white flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border p-8 text-center md:basis-[calc(66.66%-12px)]">
+        <div className="bg-glass-gradient md:p-14 border-transparent-white flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)]">
           <p className="text-3xl mb-4">Meet your command line</p>
           <p className="text-primary-text text-md">
             Complete any action in seconds with the global command menu.
