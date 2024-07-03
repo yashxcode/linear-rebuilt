@@ -17,7 +17,7 @@ export const UnlikeAnyTool = () => {
         </p>
       </div>
       <div className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto px-8 md:flex-wrap md:px-0">
-        <div className="bg-glass-gradient md:p-14 border-transparent-white flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)]">
+        <div className="bg-glass-gradient md:p-14 border-transparent-white relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)]">
           <KeyboardShortcuts />
           <p className="text-3xl mb-4">Built for your keyboard</p>
           <p className="text-primary-text text-md">

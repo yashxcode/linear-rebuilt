@@ -1,6 +1,6 @@
 "use client"
 
-import { MouseEvent, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { Button, Highlight } from "./button"
 import { KeyboardIllustration } from "./illustrations/keyboard"
 
@@ -22,15 +22,30 @@ const shortcuts = [
 export const KeyboardShortcuts = () => {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const illustrationWrapperRef = useRef<HTMLDivElement>(null)
-  const onShortcutButtonClick = (
-    e: MouseEvent<HTMLButtonElement>,
-    keys: string,
-  ) => {
-    e.preventDefault()
+  const activeShortcutIndex = useRef(0)
+  const timeoutRef = useRef<NodeJS.Timeout>()
+
+  const scheduleTimeout = () => {
+    timeoutRef.current = setTimeout(goToNextShortcut, 2500)
+  }
+
+  useEffect(() => {
+    scheduleTimeout()
+    return () => clearTimeout(timeoutRef.current)
+  }, [])
+
+  const goToShortcut = (index: number) => {
+    clearTimeout(timeoutRef.current)
+
     if (!wrapperRef.current) return
 
+    const shortcut = wrapperRef.current.querySelector<HTMLButtonElement>(
+      `button:nth-child(${index + 1})`,
+    )
+    if (!shortcut) return
+
     wrapperRef.current.scrollTo({
-      left: e.currentTarget.offsetLeft - wrapperRef.current.clientWidth / 2,
+      left: shortcut.offsetLeft - wrapperRef.current.clientWidth / 2,
       behavior: "smooth",
     })
 
@@ -40,29 +55,46 @@ export const KeyboardShortcuts = () => {
       .querySelectorAll(".active")
       .forEach((el) => el.classList.remove("active"))
 
+    const keys = shortcut.dataset.keys || ""
     const keyArray = keys.split("")
     const keyElements = keyArray.map((key) =>
       illustrationWrapperRef.current?.querySelector(`[data-key="${key}"]`),
     )
 
     keyElements.forEach((element) => element?.classList.add("active"))
+
+    activeShortcutIndex.current = index
+    scheduleTimeout()
+  }
+
+  const goToNextShortcut = () =>
+    goToShortcut((activeShortcutIndex.current + 1) % shortcuts.length)
+
+  const onShortcutButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    goToShortcut(Number(e.currentTarget.dataset.index))
   }
 
   return (
     <>
-      <div ref={illustrationWrapperRef} className="mask-keyboard h-full w-full">
+      <div
+        ref={illustrationWrapperRef}
+        className="mask-keyboard absolute -left-12 top-0 h-full max-h-[30rem] w-[200%] md:relative md:left-auto md:w-full"
+      >
         <KeyboardIllustration />
       </div>
-      <div className="no-scrollbar my-7 hidden h-[4rem] min-h-[4rem] w-full overflow-hidden md:block">
+      <div className="my-7 hidden h-[4rem] min-h-[4rem] w-full overflow-hidden md:block">
         <div
           ref={wrapperRef}
-          className="mask-shortcutkeys flex h-[6rem] max-w-full snap-x snap-mandatory gap-2 overflow-auto"
+          className="mask-shortcutkeys no-scrollbar flex h-[6rem] max-w-full snap-x snap-mandatory gap-2 overflow-auto pb-8"
         >
-          {shortcuts.map((shortcut) => (
+          {shortcuts.map((shortcut, index) => (
             <Button
-              key={shortcut.text}
               variant="secondary"
-              onClick={(e) => onShortcutButtonClick(e, shortcut.keys)}
+              key={shortcut.text}
+              data-index={index}
+              data-keys={shortcut.keys}
+              onClick={onShortcutButtonClick}
               className="shrink-0 snap-center first:ml-[50vw] last:mr-[50vw]"
             >
               <Highlight className="uppercase">{shortcut.keys}</Highlight>
