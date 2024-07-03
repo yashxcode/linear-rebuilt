@@ -1,4 +1,5 @@
 import { Button, Highlight } from "../button"
+import { CommandMenu } from "../command-menu"
 import { LogoLightIllustration } from "../illustrations/logo-light"
 import { ZapIllustration } from "../illustrations/zap"
 import { KeyboardShortcuts } from "../keyboard-shortcuts"
@@ -7,39 +8,39 @@ export const UnlikeAnyTool = () => {
   return (
     <div className="text-white">
       <div className="text-center">
-        <h2 className="text-4xl md:text-7xl mb-4 md:mb-7">
+        <h2 className="mb-4 text-4xl md:mb-7 md:text-7xl">
           Unlike any tool
           <br className="hidden md:inline-block" /> you've used before
         </h2>
-        <p className="text-primary-text md:text-xl mx-auto mb-12 max-w-[68rem] text-lg md:mb-7">
+        <p className="mx-auto mb-12 max-w-[68rem] text-lg text-primary-text md:mb-7 md:text-xl">
           Designed to the last pixel and engineered with unforgiving precision,
           Linear combines UI elegance with world-class performance.
         </p>
       </div>
       <div className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto px-8 md:flex-wrap md:px-0">
-        <div className="bg-glass-gradient md:p-14 border-transparent-white relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)]">
+        <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)] md:p-14">
           <KeyboardShortcuts />
-          <p className="text-3xl mb-4">Built for your keyboard</p>
-          <p className="text-primary-text text-md">
+          <p className="mb-4 text-3xl">Built for your keyboard</p>
+          <p className="text-md text-primary-text">
             Fly through your tasks with rapid-fire keyboard shortcuts for
             everything. Literally everything.
           </p>
         </div>
-        <div className="bg-glass-gradient md:p-14 border-transparent-white relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border p-8 text-center md:basis-[calc(33.33%-12px)]">
+        <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:basis-[calc(33.33%-12px)] md:p-14">
           <div className="mask-linear-faded absolute top-[-9.2rem]">
             <ZapIllustration />
           </div>
-          <p className="text-3xl mb-4">Breathtakingly fast</p>
-          <p className="text-primary-text text-md">
+          <p className="mb-4 text-3xl">Breathtakingly fast</p>
+          <p className="text-md text-primary-text">
             Built for speed with 50ms interactions and real-time sync.
           </p>
         </div>
-        <div className="bg-glass-gradient md:p-14 border-transparent-white group relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border p-8 text-center md:basis-[calc(33.33%-12px)]">
+        <div className="group relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:basis-[calc(33.33%-12px)] md:p-14">
           <div className="pointer-events-none absolute top-[-8rem] w-[130%]">
             <LogoLightIllustration />
           </div>
-          <p className="text-3xl mb-4">Designed for modern software teams</p>
-          <p className="text-primary-text text-md">
+          <p className="mb-4 text-3xl">Designed for modern software teams</p>
+          <p className="text-md text-primary-text">
             Comes with built-in workflows that create focus and routine.
           </p>
           <Button
@@ -61,11 +62,12 @@ export const UnlikeAnyTool = () => {
             </svg>
           </Button>
         </div>
-        <div className="bg-glass-gradient md:p-14 border-transparent-white flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end rounded-[4.8rem] border p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)]">
-          <p className="text-3xl mb-4">Meet your command line</p>
-          <p className="text-primary-text text-md">
+        <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-start rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)] md:p-14">
+          <p className="mb-4 text-3xl">Meet your command line</p>
+          <p className="text-md text-primary-text">
             Complete any action in seconds with the global command menu.
           </p>
+          <CommandMenu />
         </div>
       </div>
     </div>
