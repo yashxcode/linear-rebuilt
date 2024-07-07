@@ -52,9 +52,9 @@ export const HeroImage = () => {
     <div ref={ref} className="mt-[12.8rem] [perspective:2000px]">
       <div
         className={classNames(
-          "bg-hero-gradient border-transparent-white relative rounded-lg border bg-white bg-opacity-[0.01]",
+          "relative rounded-lg border border-transparent-white bg-white bg-opacity-[0.01] bg-hero-gradient",
           inView ? "animate-image-rotate" : "[transform:rotateX(25deg)]",
-          "before:bg-hero-glow before:absolute before:left-0 before:top-0 before:h-full before:w-full before:opacity-0 before:[filter:blur(120px)]",
+          "before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(120px)]",
           inView && "before:animate-image-glow",
         )}
       >
@@ -70,11 +70,11 @@ export const HeroImage = () => {
                 } as CSSProperties
               }
               className={classNames(
-                "bg-glow-lines absolute top-0 block h-[1px] w-[10rem]",
+                "absolute top-0 block h-[1px] w-[10rem] bg-glow-lines",
                 line.direction === "to right" &&
-                  "animate-glow-line-horizontal left-0 h-[1px] w-[calc(var(--size)*1rem)]",
+                  "left-0 h-[1px] w-[calc(var(--size)*1rem)] animate-glow-line-horizontal",
                 line.direction === "to bottom" &&
-                  "animate-glow-line-vertical right-0 h-[calc(var(--size)*1rem)] w-[1px]",
+                  "right-0 h-[calc(var(--size)*1rem)] w-[1px] animate-glow-line-vertical",
               )}
             />
           ))}
