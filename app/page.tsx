@@ -29,9 +29,9 @@ const Home = () => {
       <Container>
         <UnlikeAnyTool />
       </Container>
-      <Container className="my-[25.2rem]">
-        <IssueTracking />
-      </Container>
+      <IssueTracking />
+      <BuildMomentum />
+      <SetDirection />
     </>
   )
 }
