@@ -10,34 +10,6 @@ type FeaturesProps = {
   colorDark: string
 }
 
-type MainFeatureProps = {
-  image: string
-  text: string
-  title: React.ReactNode
-  imageSize?: "small" | "large"
-}
-
-type FeaturesTitleProps = {
-  children: React.ReactNode
-}
-
-type FeaturesGridProps = {
-  features: {
-    icon: React.FC
-    title: string
-    text: string
-  }[]
-}
-
-type FeaturesCardsProps = {
-  features: {
-    image: string
-    imageClassName: string
-    title: string
-    text: string
-  }[]
-}
-
 export const Features = ({ children, color, colorDark }: FeaturesProps) => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false })
 
@@ -64,15 +36,16 @@ export const Features = ({ children, color, colorDark }: FeaturesProps) => {
   )
 }
 
-const FeaturesTitle = ({ children }: FeaturesTitleProps) => (
-  <h2 className="text-gradient mb-11 text-center text-6xl md:text-8xl">
-    {children}
-  </h2>
-)
+type MainFeatureProps = {
+  image: string
+  text: string
+  title: React.ReactNode
+  imageSize?: "small" | "large"
+}
 
 const MainFeature = ({
-  text,
   image,
+  text,
   title,
   imageSize = "small",
 }: MainFeatureProps) => {
@@ -88,7 +61,7 @@ const MainFeature = ({
           <h2 className="text-gradient mb-11 translate-y-[40%] pt-[12rem] text-center text-6xl [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] md:pt-0 md:text-8xl [.is-visible_&]:translate-y-0">
             {title}
           </h2>
-          <div className="relative z-10 rounded-[14px] backdrop-blur-[6px] before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(rgba(255,_255,_255,_0.3),_rgba(255,_255,_255,_0)_120%)] before:p-[1px] before:[mask-composite:xor] before:[mask:linear-gradient(black,_black)_content-box_content-box,_linear-gradient(black,_black)] after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:bg-[rgba(255,_255,_255,_0.15)] after:[mask:linear-gradient(black,transparent)]">
+          <div className="relative z-10 rounded-[14px] backdrop-blur-[6px] before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(rgba(255,_255,_255,_0.1),_rgba(255,_255,_255,_0)_120%)] before:p-[1px] before:[mask-composite:xor] before:[mask:linear-gradient(black,_black)_content-box_content-box,_linear-gradient(black,_black)] after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:bg-[rgba(255,_255,_255,_0.15)] after:[mask:linear-gradient(black,transparent)]">
             <img src={image} className="h-auto w-full" />
           </div>
         </Container>
@@ -101,6 +74,14 @@ const MainFeature = ({
       </Container>
     </>
   )
+}
+
+type FeaturesGridProps = {
+  features: {
+    icon: React.FC
+    title: string
+    text: string
+  }[]
 }
 
 const FeaturesGrid = ({ features }: FeaturesGridProps) => {
@@ -121,7 +102,16 @@ const FeaturesGrid = ({ features }: FeaturesGridProps) => {
   )
 }
 
-const FeaturesCards = ({ features }: FeaturesCardsProps) => {
+type FeatureCardsProps = {
+  features: {
+    image: string
+    imageClassName: string
+    title: string
+    text: string
+  }[]
+}
+
+const FeatureCards = ({ features }: FeatureCardsProps) => {
   return (
     <Container>
       <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
@@ -145,5 +135,4 @@ const FeaturesCards = ({ features }: FeaturesCardsProps) => {
 
 Features.Main = MainFeature
 Features.Grid = FeaturesGrid
-Features.Cards = FeaturesCards
-Features.Title = FeaturesTitle
+Features.Cards = FeatureCards
