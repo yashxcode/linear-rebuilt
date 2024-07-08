@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Linear Landing Page Rebuild 🎨
 
-## Getting Started
+This project is a reverse-engineered rebuild of the Linear.app landing page. Built from scratch using Next.js, TypeScript, and TailwindCSS, this project showcases complex animations and interactive components, focusing heavily on design and user experience.
 
-First, run the development server:
+## Live Demo 🎉
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Check out the live version: [Linear Rebuild](https://linear-rebuilt.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features ✨
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🌟 **Complex Animations**: Smooth and intricate animations that replicate the original Linear landing page.
+- 🖥️ **Interactive Components**: Client-side components designed for high interactivity and responsiveness.
+- 🎨 **Design-Focused**: A meticulous recreation emphasizing design precision and visual aesthetics.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies Used 🛠️
 
-## Learn More
+- **Next.js**: Framework for server-rendered React applications.
+- **TypeScript**: Static typing for JavaScript.
+- **TailwindCSS**: Utility-first CSS framework.
 
-To learn more about Next.js, take a look at the following resources:
+## Installation 🛠️
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To set up the project locally, follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Clone the repository:**
 
-## Deploy on Vercel
+   ```bash
+   git clone https://github.com/yourusername/linear-rebuilt.git
+   cd linear-rebuilt
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install the dependencies:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+---
+
+This rebuild aims to capture the essence of the Linear.app landing page, providing a detailed and engaging user experience. For any issues, feel free to open an issue on this repository.
