@@ -5,6 +5,7 @@ import { UnlikeAnyTool } from "@/components/sections/unlike-any-tool"
 import classNames from "classnames"
 import { HomepageHero } from "@/components/sections/homepage-hero"
 import { IssueTracking } from "@/components/sections/issue-tracking"
+import { BuildMomentum } from "@/components/sections/build-momentum"
 
 const Home = () => {
   return (
@@ -31,7 +32,7 @@ const Home = () => {
       </Container>
       <IssueTracking />
       <BuildMomentum />
-      <SetDirection />
+      {/* <SetDirection /> */}
     </>
   )
 }
