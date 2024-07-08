@@ -18,7 +18,7 @@ export const IssueTracking = () => {
           <>
             Issue tracking
             <br />
-            you'll enjoy using
+            you&apos;ll enjoy using
           </>
         }
         image="/issues.webp"

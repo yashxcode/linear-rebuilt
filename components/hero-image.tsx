@@ -59,8 +59,9 @@ export const HeroImage = () => {
         )}
       >
         <div className="absolute left-0 top-0 z-20 h-full w-full overflow-hidden">
-          {lines.map((line) => (
+          {lines.map((line, index) => (
             <span
+              key={index}
               onAnimationEnd={() => removeLine(line.id)}
               style={
                 {

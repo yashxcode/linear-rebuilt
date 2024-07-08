@@ -14,9 +14,9 @@ import { VercelLogo } from "../logos/vercel"
 export const Clients = () => {
   return (
     <>
-      <p className="md:text-xl mb-12 text-center text-lg text-white">
+      <p className="mb-12 text-center text-lg text-white md:text-xl">
         <span className="text-primary-text">
-          Powering the world's best product teams.
+          Powering the world&apos;s best product teams.
         </span>
         <br className="hidden md:block" /> From next gen startups to established
         enterprises.
